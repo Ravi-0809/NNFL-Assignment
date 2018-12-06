@@ -1,3 +1,5 @@
+% The input n is the number of neurons. To find n, Run 'grid_search.m' 
+
 function cm = rbfnn(n)
 clc;
 % clear;
