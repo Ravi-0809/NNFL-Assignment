@@ -3,6 +3,7 @@ oa = [];
 iter = 50;
 for i = 1:iter
     cm = rbfnn(iter);
+%     [cm,cost] = mfnn(iter);
     s = 0;
     for j = 1:3
         s = s + cm(j,j);

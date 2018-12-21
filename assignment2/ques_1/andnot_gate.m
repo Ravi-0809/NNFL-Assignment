@@ -5,13 +5,15 @@ x = [0,0,1,1;0,1,0,1];
 x = x';
 y = [0,0,1,0];
 y = y';
-% w = [normrnd(0,1),normrnd(0,1)];
-w = [0.5,0.5];
-w(1) = normrnd(0,1);
-w(2) = normrnd(0,1);
-b = 0;
-alpha = 0.1;
-theta = 0.5;
+
+% weight and bias initialization:
+xmax = 0.5;
+xmin = -0.5;
+w = [(xmin + (xmax-xmin)*rand()), (xmin + (xmax-xmin)*rand())];
+b = xmin + (xmax-xmin)*rand();
+
+alpha = 0.01;
+theta = 0.501;
 iter = 50;
 a = zeros(4,1);
 output = zeros(4,1);
@@ -28,6 +30,6 @@ for k = 1:iter
             b = b + (alpha*y(i));
         end
     end
-    error(k) = sum((y-output).^2);
+    error(k) = mean(sum((y-output).^2));
 end
 plot(error)

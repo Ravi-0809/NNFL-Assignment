@@ -41,7 +41,6 @@ y = trainoutput;
 xt = testinput;
 yt = testoutput;
 
-% [~ , mu] = kmeans(x,10);
 [~ , mu] = kmeans(x,n);
 
 % Hidden layer eval
